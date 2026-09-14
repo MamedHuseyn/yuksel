@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Məxfilik Siyasəti — Yüksəl</title>
+<style>
+:root {
+  --fon: #fbfaf7;
+  --kart: #ffffff;
+  --metn: #1c1b19;
+  --solgun: #5d5a54;
+  --xett: #e3e0d8;
+  --vurgu: #8a6d2f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fon: #16150f;
+    --kart: #1f1e17;
+    --metn: #f0ece1;
+    --solgun: #a8a294;
+    --xett: #33312a;
+    --vurgu: #d4b268;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding-block: 40px;
+  padding-inline: 20px;
+  background: var(--fon);
+  color: var(--metn);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid var(--xett);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.25;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 36px 0 12px;
+  letter-spacing: -0.005em;
+}
+
+h3 {
+  font-size: 17px;
+  margin: 24px 0 8px;
+}
+
+p, li { color: var(--metn); }
+
+.solgun { color: var(--solgun); font-size: 15px; margin: 0; }
+
+ul { padding-inline-start: 22px; }
+li { margin-bottom: 8px; }
+
+a { color: var(--vurgu); }
+
+.qutu {
+  background: var(--kart);
+  border: 1px solid var(--xett);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 24px 0;
+}
+
+.qutu p:first-child { margin-top: 0; }
+.qutu p:last-child { margin-bottom: 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+th, td {
+  text-align: start;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--xett);
+  vertical-align: top;
+}
+
+th { font-weight: 600; }
+
+.cedvel-sarma { overflow-x: auto; }
+
+footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--xett);
+  color: var(--solgun);
+  font-size: 15px;
+}
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Məxfilik Siyasəti</h1>
+  <p class="solgun">«Yüksəl» iOS tətbiqi · Son yenilənmə: 14 sentyabr 2026</p>
+</header>
+
+<p>Bu sənəd «Yüksəl» tətbiqinin hansı məlumatı topladığını, niyə topladığını və
+onunla nə etdiyini izah edir. Tətbiqi <strong>DEV ADAMLAR MMC</strong> hazırlayır.</p>
+
+<div class="qutu">
+  <p><strong>Qısaca:</strong> tətbiq reklam göstərmir, sizi izləmir və məlumatınızı
+  heç kimə satmır. Hesab yaratmasanız heç nə toplanmır. Hesab yaratsanız yalnız
+  girişin işləməsi üçün lazım olan üç şey saxlanılır: istifadəçi identifikatoru,
+  e-poçt və ad.</p>
+</div>
+
+<h2>1. Hesab olmadan istifadə</h2>
+
+<p>Tətbiqi qeydiyyatsız — qonaq rejimində — açıb istifadə edə bilərsiniz. Bu
+halda heç bir şəxsi məlumat toplanmır və heç nə serverə göndərilmir. Qonaq
+rejimində müəyyən sayda sualdan sonra davam etmək üçün giriş tələb olunur.</p>
+
+<h2>2. Hesab yaratdıqda toplanan məlumat</h2>
+
+<p>Giriş yalnız <strong>Apple ilə giriş</strong> və ya <strong>Google ilə giriş</strong>
+vasitəsilə mümkündür. Tətbiq sizin Apple və ya Google parolunuzu görmür və saxlamır —
+təsdiqi tamamilə həmin şirkətlərin öz sistemləri aparır.</p>
+
+<div class="cedvel-sarma">
+<table>
+  <tr><th>Məlumat</th><th>Haradan gəlir</th><th>Niyə lazımdır</th></tr>
+  <tr>
+    <td>İstifadəçi identifikatoru</td>
+    <td>Apple / Google</td>
+    <td>Hesabınızı tanımaq üçün — onsuz növbəti girişdə sizi ayırd etmək mümkün deyil</td>
+  </tr>
+  <tr>
+    <td>E-poçt ünvanı</td>
+    <td>Apple / Google</td>
+    <td>Hesabın bərpası və sizinlə əlaqə üçün</td>
+  </tr>
+  <tr>
+    <td>Ad</td>
+    <td>Apple / Google (paylaşsanız)</td>
+    <td>Tətbiqdə sizə müraciət etmək üçün</td>
+  </tr>
+</table>
+</div>
+
+<p>Bu üç məlumat <strong>Firebase Authentication</strong> xidmətində saxlanılır.
+Xidməti Google təqdim edir və məlumat Google-un serverlərində yerləşir.</p>
+
+<h3>Apple ilə girişdə e-poçtu gizlətmək</h3>
+
+<p>Apple ilə giriş zamanı «E-poçtumu gizlə» seçimini işarələsəniz, Apple bizə
+sizin həqiqi ünvanınızı deyil, yalnız ona yönləndirən əvəzedici ünvan verir.
+Bu, tamamilə sizin ixtiyarınızdadır və tətbiqin işləməsinə mane olmur.</p>
+
+<h2>3. Yalnız telefonunuzda qalan məlumat</h2>
+
+<p>Qeydiyyat ekranında doldurduğunuz profil — ad, soyad, istifadəçi adı, e-poçt,
+yaş, hazırlıq səviyyəsi və maraq sahəsi — <strong>heç bir serverə göndərilmir</strong>.
+O, yalnız cihazınızın daxili yaddaşında saxlanılır.</p>
+
+<p>Eyni şey öyrənmə tarixçəniz üçün də keçərlidir: hansı sualları cavablandırdığınız,
+nəticələriniz və tərəqqiniz cihazdan kənara çıxmır. Tətbiqi silsəniz bu məlumat
+cihazla birlikdə yox olur.</p>
+
+<h2>4. Toplanmayan məlumat</h2>
+
+<ul>
+  <li>Reklam identifikatoru və reklam şəbəkələri — tətbiqdə reklam yoxdur</li>
+  <li>Analitika və davranış izləmə vasitələri</li>
+  <li>Məkan məlumatı</li>
+  <li>Əlaqə siyahısı, şəkillər, mikrofon, kamera</li>
+  <li>Sağlamlıq, maliyyə və ödəniş məlumatı — tətbiq ödənişsizdir</li>
+</ul>
+
+<p>Tətbiq sizi başqa şirkətlərin tətbiqləri və saytları arasında
+<strong>izləmir</strong> və məlumatınızı reklam məqsədilə heç kimə vermir.</p>
+
+<h2>5. Məlumat kiminlə paylaşılır</h2>
+
+<p>Hesab məlumatı yalnız bir xidmət provayderi ilə paylaşılır — <strong>Google</strong>
+(Firebase Authentication və Firebase Cloud Firestore). Google məlumatı bizim
+adımızdan emal edir. Bax:
+<a href="https://firebase.google.com/support/privacy">Firebase məxfilik sənədi</a>.</p>
+
+<p>Bundan başqa heç bir üçüncü tərəfə məlumat verilmir. Məlumat satılmır,
+kirayə verilmir və reklam məqsədilə paylaşılmır.</p>
+
+<p>Qanunun tələb etdiyi hallarda — məsələn səlahiyyətli dövlət orqanının
+qanuni sorğusu əsasında — məlumatın açıqlanması tələb oluna bilər.</p>
+
+<h2>6. Sualların yüklənməsi</h2>
+
+<p>Tətbiq sual bankını və şəkilləri internet üzərindən yükləyir. Bu sorğular
+<strong>anonimdir</strong> — kimliyinizi göstərən heç nə göndərilmir. Server
+yalnız hansı məzmunun istənildiyini görür, kimin istədiyini yox.</p>
+
+<h2>7. Hesabınızı silmək</h2>
+
+<p>Hesabınızı istənilən vaxt <strong>tətbiqin özündən</strong> silə bilərsiniz:
+hesab ekranını açın və «Hesabı sil» seçimini işlədin.</p>
+
+<p>Silinmə dərhal və geri dönməzdir — Firebase Authentication-dakı qeydiniz
+(identifikator, e-poçt, ad) tamamilə silinir, cihazdakı profil və tərəqqi də
+təmizlənir. Silinmiş hesabı bərpa etmək mümkün deyil.</p>
+
+<p>Əlavə olaraq Apple ilə girişi <em>Ayarlar → Apple hesabı → Şifrə və Təhlükəsizlik →
+Apple ilə Girişdən istifadə edən tətbiqlər</em> bölməsindən də ləğv edə bilərsiniz.</p>
+
+<h2>8. Məlumat nə qədər saxlanılır</h2>
+
+<p>Hesab məlumatı hesabınız mövcud olduğu müddətdə saxlanılır. Hesabı silsəniz
+məlumat həmin anda silinir. Cihazdakı məlumat tətbiqi silənə qədər qalır.</p>
+
+<h2>9. Uşaqlar</h2>
+
+<p>Tətbiq dövlət qulluğuna hazırlaşan böyüklər üçün nəzərdə tutulub və
+uşaqlara yönəlmir. 13 yaşından kiçik şəxslərdən bilərəkdən məlumat toplamırıq.
+Belə bir məlumatın toplandığını aşkar etsək dərhal siləcəyik.</p>
+
+<h2>10. Hüquqlarınız</h2>
+
+<p>Sizə aid məlumatı görmək, düzəltmək və ya silmək istəsəniz aşağıdakı ünvana
+yazın. Sorğulara 30 gün ərzində cavab veririk.</p>
+
+<h2>11. Bu sənəddəki dəyişikliklər</h2>
+
+<p>Siyasət dəyişsə yenilənmiş mətn bu səhifədə dərc olunacaq və yuxarıdakı
+tarix yenilənəcək. Əhəmiyyətli dəyişikliklər barədə tətbiq vasitəsilə
+məlumat veriləcək.</p>
+
+<h2>12. Əlaqə</h2>
+
+<p>Məxfiliklə bağlı hər hansı sualınız üçün:
+<a href="mailto:imtahanver@hotmail.com">imtahanver@hotmail.com</a></p>
+
+<footer>
+  <p>«Yüksəl» müstəqil hazırlıq vasitəsidir — rəsmi qurumların, o cümlədən
+  Dövlət İmtahan Mərkəzinin hazırladığı və ya təsdiqlədiyi mənbə deyil.
+  Rəsmi məlumat üçün <a href="https://dim.gov.az">dim.gov.az</a> saytına baxın.</p>
+  <p><a href="index.html">Dəstək səhifəsi</a></p>
+</footer>
+
+</main>
+</body>
+</html>
